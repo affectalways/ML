@@ -1,4 +1,0 @@
-import readfile
-import normalized_eigenvalues
-import paint
-import create_kd_tree
