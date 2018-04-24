@@ -69,7 +69,6 @@ def create_tree(data, labels):
                 data = Decision_Tree.ID3.delete_data_rows(data, feature_index_of_specified_value)
                 # decision_tree字典创建一个新的分支，对应叶节点
                 decision_tree[key][feature_value] = category
-                # print decision_tree
                 break
 
     # 获取 不被一个类包含的feature value作为key 的value

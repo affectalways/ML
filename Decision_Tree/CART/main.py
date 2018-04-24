@@ -24,7 +24,7 @@ def main():
     print cart_tree
     sample_size = len(data)
     error_count = 0
-    # print labels
+
     for element in data:
         category = tree.classify_element(element[:-1], cart_tree, origin_labels)
         print '测试用例 ： ' + str(element[:-1]) + ', ' + '测试结果 : ' + str(category) + ', ' + '实际结果 ：' + str(element[-1])

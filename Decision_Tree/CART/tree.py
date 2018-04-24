@@ -98,10 +98,17 @@ def create_tree(data, labels):
 # 识别元素
 def classify_element(element, cart_tree, labels):
     for key, value in cart_tree.items():
-        # label_index = labels.index(key)
+        # 获取value中key在labels的index
+        # print key
+        # print labels
+        label_index = labels.index(key)
+        specified_value_of_element = element[label_index]
         # 若是一个字典，递归调用该方法
         if type(value).__name__ == 'dict':
-            classified_category = classify_element(element, value, labels)
+            if type(value[specified_value_of_element]).__name__ == 'dict':
+                classified_category = classify_element(element, value[specified_value_of_element], labels)
+            else:
+                classified_category = value[specified_value_of_element]
         else:
             # 若是值，就OK了
             classified_category = value
