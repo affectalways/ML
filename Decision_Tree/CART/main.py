@@ -9,6 +9,7 @@ import vector_data
 import tree
 import fractions
 import copy
+import paint
 
 
 # 程序入口
@@ -18,6 +19,9 @@ def main():
     data = vector_data.get_data()
     # 深拷贝
     labels = copy.deepcopy(origin_labels)
+    # data 为 pandas 类型
+    # data, origin_lables = vector_data.get_data_and_labels_from_file()
+    # labels = copy.deepcopy(origin_lables)
 
     # 创建树
     cart_tree = tree.create_tree(data, labels)
@@ -32,6 +36,7 @@ def main():
             error_count += 1
 
     print '错误率 ：' + str(fractions.Fraction(error_count, sample_size))
+    paint.create_plot(cart_tree)
 
 
 if __name__ == "__main__":

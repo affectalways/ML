@@ -99,8 +99,6 @@ def create_tree(data, labels):
 def classify_element(element, cart_tree, labels):
     for key, value in cart_tree.items():
         # 获取value中key在labels的index
-        # print key
-        # print labels
         label_index = labels.index(key)
         specified_value_of_element = element[label_index]
         # 若是一个字典，递归调用该方法
